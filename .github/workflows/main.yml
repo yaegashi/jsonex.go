@@ -1,0 +1,14 @@
+---
+name: go test
+on: [push]
+
+jobs:
+  go-test:
+    name: go test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.11
+      - run: go test -v ./v1
